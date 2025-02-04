@@ -1,11 +1,11 @@
 <?php
 /******************************************************************************\
 |                                                                              |
-|                                  OpenAI.php                                  |
+|                              UsernameFilter.php                              |
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|        This defines an interface to the OpenAI API                           |
+|        This defines a utility for filtering by username (string).            |
 |                                                                              |
 |        Author(s): Abe Megahed                                                |
 |                                                                              |
@@ -16,54 +16,32 @@
 |            Copyright (C) 2016-2024, Sharedigm, www.sharedigm.com             |
 \******************************************************************************/
 
-namespace App\Utilities\AI;
+namespace App\Http\Filters;
 
-use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
 
-abstract class OpenAI
+class UserNameFilter
 {
-	const MAXLENGTH = 8192;
-
 	/**
-	 * Generate an image.
+	 * Apply name filter to query.
 	 *
-	 * @param $text - The text string to embed.
-	 * @return scalar[] - The vector that was generated.
+	 * @param Illuminate\Http\Request $request - the Http request object
+	 * @param Illuminate\Database\Query\Builder $query - the query to apply filters to
+	 * @return Illuminate\Database\Query\Builder
 	 */
-	static function embed($text) {
-		$token = env('OPENAI_API_KEY');
+	static function applyTo(Request $request, $query) {
 
-		// check for token
+		// parse parameters
 		//
-		if (!$token) {
-			return response('No token provided', 400);
+		$name = $request->input('name', null);
+
+		// add username filter to query
+		//
+		if ($name) {
+			$query = $query->where('first_name', 'like', '%' . $name . '%')
+				->orWhere('last_name', 'like', '%' . $name . '%');
 		}
 
-		// get request endpoint
-		//
-		$url = env('OPENAI_API_ENDPOINT') . '/v1/embeddings';
-
-		// clamp text
-		//
-		if (strlen($text) > self::MAXLENGTH) {
-			$text = substr($text, 0, self::MAXLENGTH);
-		}
-
-		// make request
-		//
-		$response = Http::withToken($token)
-			->timeout(60)
-			->post($url, [
-				"input" => $text,
-				"model" => "text-embedding-3-small"
-			]);
-
-		// check response code
-		//
-		if ($response->status() != 200) {
-			return $response;
-		}
-
-		return $response["data"][0]["embedding"];
+		return $query;
 	}
 }

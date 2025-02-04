@@ -10207,6 +10207,9 @@ body[device=phone] .item-tree .expander button.btn-sm, body[device=tablet] .item
   height: 36px;
 }
 
+.extra-large.tile-grid .item {
+  width: 256px;
+}
 .extra-large.tile-grid .item > .tile {
   width: 256px;
   height: 256px;
