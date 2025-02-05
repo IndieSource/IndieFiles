@@ -869,6 +869,7 @@ h1 .icon i {
   height: 100%;
 }
 .app.fixed-size .body {
+  height: 100%;
   flex-grow: 0 !important;
   margin: auto;
 }
@@ -17947,10 +17948,14 @@ body:not(.binary):not(.flat-menus):not(.flat.auto-menus) .menu-bar > ul.nav-menu
 }
 
 @media (max-width: 480px) {
-  .menu-bar > ul.nav-menus > li > a i {
-    display: none;
+  .menu-bar > ul.nav-menus > li {
+    /*
+    &.help {
+    	display: none;
+    }
+    */
   }
-  .menu-bar > ul.nav-menus > li.help {
+  .menu-bar > ul.nav-menus > li > a i {
     display: none;
   }
 }
