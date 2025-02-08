@@ -77,12 +77,10 @@ A complete User Guide detailing the use of the platform is available at:
 
 Please follow the instructions in [https://www.sharedigm.com/#installation](https://www.sharedigm.com/#installation) to install the software on your computer or web server.
 
-<!-- LICENSE -->
 ## License
 
-Distributed under the IndieSource License which allows unrestricted use of the software except by very large corporations. See [LICENSE.md](LICENSE.md) for more information.
+Distributed under the <a href="https://indiesource.org/">IndieSource License</a> which allows unrestricted use of the software except by very large corporations. See [LICENSE.md](LICENSE.md) for more information.
 
-<!-- CONTACT -->
 ## Contact
 
 mailto:admin@sharedigm.com
