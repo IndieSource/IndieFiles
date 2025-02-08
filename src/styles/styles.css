@@ -17558,7 +17558,7 @@ a.unstyled {
   margin: 5px 0;
   background: none;
 }
-.menu li.divider:last-child, .dropdown-menu li.divider:last-child {
+.menu li.divider:first-child, .menu li.divider:last-child, .dropdown-menu li.divider:first-child, .dropdown-menu li.divider:last-child {
   display: none;
 }
 .menu li.divider:hover, .dropdown-menu li.divider:hover {
