@@ -6,7 +6,7 @@
 |******************************************************************************|
 |                                                                              |
 |       This defines a notification that a user has requested to share         |
-|        a file or folder.                                                     |
+|       a file or folder.                                                      |
 |                                                                              |
 |       Author(s): Abe Megahed                                                 |
 |                                                                              |

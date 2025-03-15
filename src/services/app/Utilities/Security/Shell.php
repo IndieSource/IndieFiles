@@ -5,7 +5,7 @@
 |                                                                              |
 |******************************************************************************|
 |                                                                              |
-|       This is a utility for performing password encryption.                  |
+|       This is a utility for performing shell commands.                       |
 |                                                                              |
 |       Author(s): Abe Megahed                                                 |
 |                                                                              |

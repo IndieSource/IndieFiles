@@ -6,7 +6,7 @@
 |******************************************************************************|
 |                                                                              |
 |       This defines an abstract superclass for file system files and          |
-|        directories.                                                          |
+|       directories.                                                           |
 |                                                                              |
 |       Author(s): Abe Megahed                                                 |
 |                                                                              |

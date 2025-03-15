@@ -6,7 +6,7 @@
 |******************************************************************************|
 |                                                                              |
 |       This defines a notification that a user has invited you to             |
-|        join a chat session.                                                  |
+|       join a chat session.                                                   |
 |                                                                              |
 |       Author(s): Abe Megahed                                                 |
 |                                                                              |

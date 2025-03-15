@@ -6,7 +6,7 @@
 |******************************************************************************|
 |                                                                              |
 |       This defines a notification that a user has been invited to            |
-|        join a post topic.                                                    |
+|       join a post topic.                                                     |
 |                                                                              |
 |       Author(s): Abe Megahed                                                 |
 |                                                                              |

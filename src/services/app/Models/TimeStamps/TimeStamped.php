@@ -6,7 +6,7 @@
 |******************************************************************************|
 |                                                                              |
 |       This defines a model of a base class with create and update            |
-|        time stamps.                                                          |
+|       time stamps.                                                           |
 |                                                                              |
 |       Author(s): Abe Megahed                                                 |
 |                                                                              |
