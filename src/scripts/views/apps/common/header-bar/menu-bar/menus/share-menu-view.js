@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import MenuView from '../../../../../../views/apps/common/header-bar/menu-bar/menus/menu-view.js';
@@ -24,14 +24,15 @@ export default MenuView.extend({
 	//
 
 	visible: function() {
-		let hasConnectionManager = application.hasApp('connection_manager');
-		let hasTopicViewer = application.hasApp('topic_viewer');
-		let hasChatViewer = application.hasApp('chat_viewer');
+		let hasConnectionManager = application.hasVisibleApp('connection_manager');
+		let hasCommunicator = application.hasVisibleApp('communicator');
+		let hasTopicViewer = application.hasVisibleApp('topic_viewer');
+		let hasChatViewer = application.hasVisibleApp('chat_viewer');
 
 		return {
 			'share-by-invitation': hasConnectionManager,
-			'share-by-topic': hasTopicViewer,
-			'share-by-message': hasChatViewer,
+			'share-by-topic': hasTopicViewer || hasCommunicator,
+			'share-by-message': hasChatViewer || hasCommunicator,
 			'share-by-link': true,
 			'share-by-email': true
 		};
@@ -60,7 +61,13 @@ export default MenuView.extend({
 		// add file types
 		//
 		if (files) {
-			items.push('separator');
+
+			// add menu divider
+			//
+			items.push('divider');
+
+			// add file menu items
+			//
 			let keys = Object.keys(files);
 			for (let i = 0; i < keys.length; i++) {
 				let key = keys[i];

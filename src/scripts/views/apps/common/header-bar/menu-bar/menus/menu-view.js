@@ -12,7 +12,7 @@
 |        'LICENSE.md', which is part of this source code distribution.         |
 |                                                                              |
 |******************************************************************************|
-|        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          |
+|        Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com        |
 \******************************************************************************/
 
 import BaseView from '../../../../../../views/base-view.js';
@@ -29,9 +29,9 @@ export default BaseView.extend({
 	className: 'dropdown-menu',
 
 	itemTemplate: template(`
-		<li role="presentation"<% if (itemClass) { %> class="<%= itemClass %>"<% } %><% if (tags) { %> <%= tags %><% } %>>
-			<a class="<%= linkClass %><% if (menu) { %> dropdown-toggle<% } %>">
-				<% if (select != undefined) { %>
+		<li role="presentation"<% if (item_class || state == 'selected' || tags) { %> class="<%= item_class %><% if (tags) { %> <%= tags %><% } %><% if (state == 'selected') { %> selected<% } %>"<% } %>>
+			<a class="<%= link_class %><% if (menu) { %> dropdown-toggle<% } %>">
+				<% if (state == 'selected' || state == 'unselected') { %>
 				<i class="fa fa-check"></i>
 				<% } %>
 
@@ -50,7 +50,7 @@ export default BaseView.extend({
 				<% } %>
 
 				<% if (shortcut) { %>
-				<span class="<%= shortcutClass %>"><%= shortcut %></span>
+				<span class="<%= shortcut_class %>"><%= shortcut %></span>
 				<% } %>
 			</a>
 			<% if (menu) { %>
@@ -61,7 +61,7 @@ export default BaseView.extend({
 		</li>
 	`),
 
-	separator: '<li role="separator" class="divider"></li>',
+	divider: '<li role="separator" class="divider"></li>',
 
 	// initial state
 	//
@@ -195,7 +195,7 @@ export default BaseView.extend({
 
 		return true;
 	},
-	
+
 	//
 	// getting methods
 	//
@@ -298,7 +298,7 @@ export default BaseView.extend({
 			this.$el.find(selector).addClass('hidden');
 		}
 	},
-	
+
 	setItemVisible: function(name, visible) {
 		let item = this.getItem(name);
 
@@ -312,7 +312,7 @@ export default BaseView.extend({
 			item.addClass('hidden');
 		}
 
-		// hide / show prev separator if last item
+		// hide / show prev divider if last item
 		//
 		let prev = item.prev();
 		let next = item.next();
@@ -338,7 +338,7 @@ export default BaseView.extend({
 			item.removeClass('hidden');
 		}
 
-		// hide / show prev separator if last item
+		// hide / show prev divider if last item
 		//
 		let prev = item.prev();
 		let next = item.next();
@@ -791,11 +791,11 @@ export default BaseView.extend({
 		return this.itemTemplate({
 			name: item.name,
 			icon: item.icon,
-			select: item.select,
-			itemClass: className,
-			linkClass: item.class,
+			state: item.state,
+			item_class: className,
+			link_class: item.class,
 			shortcut: this.getShortcutName(item.shortcut),
-			shortcutClass: this.getShortcutClass(item.shortcut),
+			shortcut_class: this.getShortcutClass(item.shortcut),
 			menu: item.menu? this.toHtml(item.menu) : undefined,
 			tags: item.tags? this.tagsToString(item.tags) : undefined,
 			icons: this.constructor.icons
@@ -811,8 +811,11 @@ export default BaseView.extend({
 		if (items) {
 			for (let i = 0; i < items.length; i++) {
 				let item = items[i];
-				if (item == 'separator') {
-					html += this.separator;
+
+				// add divider or menu item
+				//
+				if (item == 'divider') {
+					html += this.divider;
 				} else {
 					html += this.itemToHtml(item);
 				}
@@ -842,7 +845,7 @@ export default BaseView.extend({
 		// hide / show menu items
 		//
 		this.updateVisible();
-		
+
 		// find shortcuts from DOM
 		//
 		this.keyCodes = this.getShortcutKeyCodes();
@@ -914,19 +917,19 @@ export default BaseView.extend({
 				case 'left': {
 					let submenuLeft = menuLeft - submenuWidth;
 					submenu.addClass('left');
-					
+
 					if (submenuLeft < 0) {
 						submenu.find('.dropdown-menu').css('margin-left', -submenuLeft);
 					} else {
 						submenu.find('.dropdown-menu').css('margin-left', '');
-					}		
+					}
 					break;
 				}
 
 				case 'right': {
 					let submenuRight = menuRight + submenuWidth;
 					submenu.removeClass('left');
-					
+
 					if (submenuRight > containerWidth) {
 						submenu.find('.dropdown-menu').css('margin-left', containerWidth - submenuRight - 1);
 					} else {
@@ -1271,27 +1274,23 @@ export default BaseView.extend({
 				object.platform = platform;
 			}
 			if (dropdown.length > 0) {
-				object.menu = this.getDropdownObjects(dropdown);
+				object.menu = this.toObjects(dropdown);
 			}
 		} else {
-			object = "separator";
+			object = "divider";
 		}
 
 		return object;
 	},
 
-	getDropdownObjects: function(element) {
-		let elements = $(element).find('> li');
-		let items = [];
-		for (let i = 0; i < elements.length; i++) {
-			let item = elements[i];
-			items.push(this.dropdownToObject(item));
-		}
-		return items;
-	},
-
 	toObjects: function(element) {
-		return this.getDropdownObjects(element);
+		let dropdowns = $(element).find('> li');
+		let objects = [];
+		for (let i = 0; i < dropdowns.length; i++) {
+			let dropdown = dropdowns[i];
+			objects.push(this.dropdownToObject(dropdown));
+		}
+		return objects;
 	},
 
 	toJson: function(element) {

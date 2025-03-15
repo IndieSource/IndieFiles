@@ -87,24 +87,23 @@
 		</div>
 		<div class="col-sm-6">
 			<div class="icons carousel">
-				<% let apps = config.apps; %>
-				<% let keys = Object.keys(apps); %>
-				<% for (let i = 0; i < keys.length; i++) { %>
-				<% let app = apps[keys[i]]; %>
+				<% let apps = application.getVisibleApps(); %>
+				<% for (let i = 0; i < apps.length; i++) { %>
+				<% let app = apps.at(i); %>
 
-				<% if (!app.disabled) { %>
+				<% if (!app.get('disabled')) { %>
 				<div class="carousel-cell">
 					<div class="app-icons large icon-grid items">
-						<a href="#apps/<%= app.app %>">
+						<a href="#apps/<%= app.get('app') %>">
 						<div class="item" href="#apps/profile-browser" style="text-decoration:none">	
 							<div class="row">
-								<div class="icon colored <%= app.color %>">
-									<img src="images/icons/apps/<%= app.image || app.app + '.svg' %>" />
-									<i class="<%= app.icon %>"></i>
+								<div class="icon colored <%= app.get('color') %>">
+									<img src="images/icons/apps/<%= app.get('image') || app.get('app') + '.svg' %>" />
+									<i class="<%= app.get('icon') %>"></i>
 								</div>
 							</div>
 							<div class="row">
-								<div class="name"><%= app.name %></div>
+								<div class="name"><%= app.get('name') %></div>
 							</div>
 						</div>
 						</a>
