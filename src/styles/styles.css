@@ -8096,6 +8096,7 @@ body[device=phone] select, body[device=tablet] select {
   border-width: 1px;
   border-style: solid;
   margin-right: 10px;
+  line-height: 1em;
 }
 .form-group .controls > select + label {
   margin-top: 7px;

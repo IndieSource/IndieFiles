@@ -819,6 +819,23 @@ export default Marionette.Application.extend(_.extend({}, AppLauchable, Authenti
 			CssUtils.removeAllHoverStyles();
 		}
 
+		// show message
+		//
+		if (config.branding.welcome.message) {
+			window.setTimeout(() => {
+				import(
+					'./views/dialogs/alerts/message-dialog-view.js'
+				).then((MessageDialogView) => {
+					this.router.fetchTemplate("message", (message) => {
+						this.show(new MessageDialogView.default({
+							message: message,
+							size: [720, 480]
+						}));
+					});
+				});
+			}, 1000);
+		}
+
 		// listen for window resize
 		//
 		$(window).on('resize', (event) => {

@@ -399,7 +399,7 @@ export default BaseView.extend({
 			// show details
 			//
 			if (config.branding.welcome.template) {
-				this.showDetails(config.branding.welcome.template, () => {
+				this.showDetails('templates/' + config.branding.welcome.template, () => {
 					this.onLoad();
 				});
 			} else {
@@ -514,7 +514,7 @@ export default BaseView.extend({
 	},
 
 	showCarouselCells: function(carousel, done) {
-		fetch(carousel.template).then((response) => response.text()).then((text) => {
+		fetch('templates/' + carousel.template).then((response) => response.text()).then((text) => {
 
 			// apply template
 			//

@@ -3,7 +3,6 @@
 	"title": "Sharedigm",
 
 	"header": {
-
 		"brand": {
 			"logo": {
 				"src": "images/logos/logo.svg",
@@ -66,10 +65,10 @@
 
 	"welcome": {
 		"background": "linear-gradient(to bottom, hsl(220, 75%, 0%) 0%, hsla(220, 50%, 50%, 100%) 100%)",
-		"template": "templates/welcome.tpl",
+		"template": "welcome.tpl",
 
 		"carousel": {
-			"template": "templates/welcome/carousel.tpl",
+			"template": "welcome/carousel.tpl",
 			"color": "white"
 		},
 
@@ -111,6 +110,8 @@
 				"color": "white"
 			}
 		},
+
+		"search": false,
 
 		"crawler2": {
 			"scale": 1,
