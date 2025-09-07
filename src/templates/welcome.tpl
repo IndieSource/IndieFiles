@@ -1,13 +1,18 @@
 <div class="primary colored section">
 	<div class="row">
 		<div class="col-sm-6">
-			<h2><img class="icon" src="images/logos/logo.svg" />Sharing Made Simple</h2>
-			<p><%= application.name %> is a self-hostable cloud based operating system that brings together file management, file sharing, and collaboration / social networking all in one easy to use platform. </p>
+			<h1><img class="icon" src="images/logos/logo.svg" />Sharing Made Simple</h1>
+			<p><%= application.name %> is a <a href="#features/self-hostable">self-hostable</a> cloud based operating system that brings together file management, file sharing, and collaboration / social networking all in one easy to use platform. </p>
+			<p>Sharedigm can help you to share your digital life.</p>
 		</div>
 		<div class="col-sm-6">
 			<div class="figure">
-				<a href="images/info/desktop/desktop.png" target="_blank" class="lightbox" title="<%= application.name %>"><img src="images/info/desktop/desktop.png" /></a>
-				<div class="caption"><%= application.name %></div>
+				<a href="images/info/desktop/desktop.png" target="_blank" class="lightbox" title="Desktop"><img src="images/info/desktop/desktop.png" /></a>
+				<div class="caption">Desktop</div>
+			</div>
+			<div class="figure" style="margin-right:-100px; margin-top:-250px">
+				<a href="images/info/mobile/iphone.png" target="_blank" class="lightbox" title="Mobile>"><img src="images/info/mobile/iphone.png" /></a>
+				<div class="caption">Mobile</div>
 			</div>
 		</div>
 	</div>
@@ -16,8 +21,15 @@
 <div class="section">
 	<div class="row">
 		<div class="col-sm-6">
-			<h2><i class="fa fa-dollar-sign"></i>It's Free To Use!</h2>
-			<p><%= application.name %> is <a href="#policies/terms-of-use">free to use</a> for non-commmercial applications. </p>
+			<h2><i class="fa fa-dollar-sign"></i>It's Free!</h2>
+			<p><%= application.name %> is 100% completely free to <a href="#installation">download and run</a> on your own server. </p>
+		</div>
+		<div class="col-sm-6">
+			<div class="figure">
+				<a href="#downloads">
+					<img style="width:150px" src="images/welcome/free-icon.svg" />
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -32,6 +44,22 @@
 			<div class="figure">
 				<a href="images/info/desktop/desktop-photos.png" target="_blank" class="lightbox" title="<%= application.name %>"><img src="images/info/desktop/desktop-photos.png" /></a>
 				<div class="caption"><%= application.name %></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="row">
+		<div class="col-sm-6">
+			<h2><i class="fa fa-fire"></i>It's Easy to Launch</h2>
+			<p><%= application.name %> makes it <a href="#installation">quick and easy to launch</a> your own personal, customized <%= application.name %> on your own server. </p>
+		</div>
+		<div class="col-sm-6">
+			<div class="figure">
+				<a href="#downloads">
+					<img height="175px" src="images/welcome/rocket-icon.svg" />
+				</a>
 			</div>
 		</div>
 	</div>
@@ -71,7 +99,7 @@
 		<div class="col-sm-6">
 			<a href="#features/platform-independent">
 				<div class="figure">
-					<a href="images/info/desktop/iphone-desktop.png" target="_blank" class="lightbox" title="<%= application.name %> Mobile"><img src="images/info/desktop/iphone-desktop.png" /></a>
+					<a href="images/info/mobile/iphone.png" target="_blank" class="lightbox" title="<%= application.name %> Mobile"><img src="images/info/mobile/iphone.png" /></a>
 					<div class="caption"><%= application.name %> Mobile</div>
 				</div>
 			</a>
@@ -86,7 +114,7 @@
 			<p><%= application.name %> has a collection of <a href="#apps">apps</a> for viewing, managing and sharing your data.</p>
 		</div>
 		<div class="col-sm-6">
-			<div class="icons carousel">
+			<div class="icons animated carousel">
 				<% let apps = application.getVisibleApps(); %>
 				<% for (let i = 0; i < apps.length; i++) { %>
 				<% let app = apps.at(i); %>
@@ -144,27 +172,14 @@
 
 				<div class="item">	
 					<div class="row">
-						<a href="http://www.dreamachines.ai" target="_blank">
+						<a href="http://www.rocketkitty.org" target="_blank">
 							<div class="icon">
-								<img src="images/logos/dreamachines.png" />
+								<img src="images/logos/rocketkitty.png" />
 							</div>
 						</a>
 					</div>
 					<div class="row">
-						<div class="name">Dreamachines</div>
-					</div>
-				</div>
-
-				<div class="item">	
-					<div class="row">
-						<a href="http://www.opticexplorer.com" target="_blank">
-							<div class="icon">
-								<img src="images/logos/opticexplorer.png" />
-							</div>
-						</a>
-					</div>
-					<div class="row">
-						<div class="name">OpticExplorer</div>
+						<div class="name">RocketKitty</div>
 					</div>
 				</div>
 
@@ -183,20 +198,33 @@
 
 				<div class="item">	
 					<div class="row">
-						<a href="http://www.rocketkitty.org" target="_blank">
+						<a href="http://www.opticexplorer.com" target="_blank">
 							<div class="icon">
-								<img src="images/logos/rocketkitty.png" />
+								<img src="images/logos/opticexplorer.png" />
 							</div>
 						</a>
 					</div>
 					<div class="row">
-						<div class="name">RocketKitty</div>
+						<div class="name">OpticExplorer</div>
+					</div>
+				</div>
+
+				<div class="item">	
+					<div class="row">
+						<a href="http://www.dreamachines.ai" target="_blank">
+							<div class="icon">
+								<img src="images/logos/dreamachines.png" />
+							</div>
+						</a>
+					</div>
+					<div class="row">
+						<div class="name">Dreamachines</div>
 					</div>
 				</div>
 
 				<div class="item">
 					<div class="row">
-						<a href="http://www.cloudintosh.com" target="_blank">
+						<a href="http://cloudintosh.sharedigm.com" target="_blank">
 							<div class="icon">
 								<img src="images/logos/cloudintosh.png" />
 							</div>
@@ -209,7 +237,7 @@
 
 				<div class="item">	
 					<div class="row">
-						<a href="http://www.windows3000.com" target="_blank">
+						<a href="http://windows3000.sharedigm.com" target="_blank">
 							<div class="icon">
 								<img src="images/logos/windows3000.png" />
 							</div>

@@ -4,15 +4,15 @@
 #                                                                              #
 #******************************************************************************#
 #                                                                              #
-#        This script counts the number of lines in a Sharedigm project.        #
+#       This script counts the number of lines in a Sharedigm project.         #
 #                                                                              #
-#        Author(s): Abe Megahed                                                #
+#       Author(s): Abe Megahed                                                 #
 #                                                                              #
-#        This file is subject to the terms and conditions defined in           #
-#        'LICENSE.md', which is part of this source code distribution.         #
+#       This file is subject to the terms and conditions defined in            #
+#       'LICENSE.md', which is part of this source code distribution.          #
 #                                                                              #
 #******************************************************************************#
-#        Copyright (C) 2016-2024, Megahed Labs LLC, www.sharedigm.com          #
+#       Copyright (C) 2016 - 2025, Megahed Labs LLC, www.sharedigm.com         #
 #******************************************************************************#
 
 # check command line arguments
