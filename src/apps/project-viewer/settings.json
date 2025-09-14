@@ -1,6 +1,6 @@
 {
 	"name": "Tasks",
-	"icon": "fa fa-check",
+	"icon": "fa fa-list",
 	"category": "productivity",
 	"platform": "all",
 	"access": "user",

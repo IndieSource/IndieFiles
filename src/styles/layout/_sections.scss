@@ -203,7 +203,7 @@ $brand-logo-shadow: drop-shadow(3px 3px 10px rgba(black, 33%));
 	&.colored {
 		color: white;
 
-		h2 {
+		h1, h2, h3 {
 			color: white !important;
 			border-color: white !important;
 

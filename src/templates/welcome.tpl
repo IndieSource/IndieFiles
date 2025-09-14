@@ -37,14 +37,13 @@
 <div class="section">
 	<div class="row">
 		<div class="col-sm-6">
-			<h2><i class="fa fa-smile"></i>It's Easy to Use!</h2>
-			<p><%= application.name %> has the <a href="#features/easy-to-use">familiar look and feel</a> of your desktop or mobile OS.  It's so familiar that you'll be comfortable with it right from the start.  It's like your computer but in the cloud. </p>
+			<h2><i class="fa fa-smile"></i>It's Easy to Use</h2>
+			<p>The easy to use and familiar user interface blends the power of the cloud with the best aspects of the user interfaces that you already know and love. </p>
 		</div>
 		<div class="col-sm-6">
 			<div class="figure">
-				<a href="images/info/desktop/desktop-photos.png" target="_blank" class="lightbox" title="<%= application.name %>"><img src="images/info/desktop/desktop-photos.png" /></a>
-				<div class="caption"><%= application.name %></div>
-			</div>
+				<img src="images/welcome/smile.svg" />
+			</div>	
 		</div>
 	</div>
 </div>
@@ -65,11 +64,11 @@
 	</div>
 </div>
 
-<% let identityProviders = application.session.has('config')? application.session.get('config').identity_providers : undefined; %>
 <div class="section">
 	<div class="row">
 		<div class="col-sm-6">
 			<h2><i class="fa fa-pencil-alt"></i>It's Quick To Sign Up</h2>
+			<% let identityProviders = application.session.has('config')? application.session.get('config').identity_providers : undefined; %>
 			<% if (identityProviders && identityProviders.length > 0) { %>
 			<p>Signing up is quick and easy.  There's a simple registration form or if you're already signed in to an identity provider (<%= identityProviders.join(', ') %>), just hit the "Sign Up With" button and you can get started in seconds! </p>
 			<% } else { %>
@@ -80,9 +79,9 @@
 			<div class="well">
 				<br />
 				<div class="buttons">
-					<button class="sign-up btn btn-lg">
+					<a href="#sign-up"><button class="sign-up btn btn-lg">
 						<i class="fa fa-pencil-alt"></i>Sign Up!
-					</button>
+					</button></a>
 				</div>
 				<br />
 			</div>
@@ -110,7 +109,7 @@
 <div class="section">
 	<div class="row">
 		<div class="col-sm-6">
-			<h2><i class="fa fa-rocket"></i>It's Got Apps!</h2>
+			<h2><i class="fa fa-rocket"></i>Apps</h2>
 			<p><%= application.name %> has a collection of <a href="#apps">apps</a> for viewing, managing and sharing your data.</p>
 		</div>
 		<div class="col-sm-6">

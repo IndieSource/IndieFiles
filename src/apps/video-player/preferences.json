@@ -27,7 +27,9 @@
 			"desktop": 175
 		},
 		"sidebar_panels": {
-			"videos": true
+			"favorites": true,
+			"videos": true,
+			"files": false
 		},
 		"sidebar_view_kind": {
 			"phone": "tiles",

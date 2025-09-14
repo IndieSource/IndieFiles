@@ -55,12 +55,14 @@
 	},
 	"audio_player": {
 		"general": {
-			"detail_kind": "artist",
 			"volume": 5,
 			"looping": {
 				"track": false,
 				"album": false
 			},
+			"detail_kind": "artist",
+			"sort_kind": "track_number",
+			"sort_order": "increasing",
 			"toolbars": {
 				"play": true,
 				"volume": true,
@@ -386,7 +388,7 @@
 			"date_format": "date_only",
 			"sort_kind": "name",
 			"sort_order": "increasing",
-			"map_mode": "map",
+			"map_mode": "hybrid",
 			"toolbars": {
 				"nav": true
 			}
@@ -1464,7 +1466,9 @@
 				"desktop": 175
 			},
 			"sidebar_panels": {
-				"videos": true
+				"favorites": true,
+				"videos": true,
+				"files": false
 			},
 			"sidebar_view_kind": {
 				"phone": "tiles",

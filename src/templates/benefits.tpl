@@ -73,7 +73,7 @@
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-6">
-				<h2><i class="fa fa-smile"></i>Enjoy the Experience</h2>
+				<h2><i class="fa fa-smile"></i>Enjoy Your Cloud</h2>
 				<p><%= application.name %> has been designed to be easy and intuitive to use.  It has been modeled after systems that your users are already familiar with so they can spend their time using the platform instead of figuring out how to use it. </p>
 			</div>
 			<div class="col-sm-6">

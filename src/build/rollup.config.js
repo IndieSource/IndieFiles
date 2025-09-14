@@ -18,7 +18,7 @@ export default {
 
 		// library chunks
 		//
-		'jquery': ['../library/jquery/jquery-3.6.0.js'],
+		'jquery': ['../library/jquery/jquery-3.7.1.js'],
 		'lodash': ['../library/lodash/lodash.js'],
 		'backbone': ['../library/backbone/backbone.js'],
 		'marionette': ['../library/backbone/marionette/backbone.marionette.js'],
