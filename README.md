@@ -6,15 +6,11 @@
 
 Sharedigm is a web platform that allows uploading, managing, and sharing of data.  It combines file sharing and management with a social network and a variety of apps.  It provides an extensive set of tools for viewing, editing, and sharing data in an intuitive desktop-like user interface experience.
 
-<figure>
-	<img src="images/screen-shots/welcome.png">
-	<figcaption>Welcome Screen</figcaption>
-</figure>
+![Screen Shot](images/screen-shots/welcome.png)
+*Welcome Screen*
 
-<figure>
-	<img src="images/screen-shots/desktop.png">
-	<figcaption>Desktop</figcaption>
-</figure>
+![Screen Shot](images/screen-shots/desktop.png)
+*Desktop*
 
 ## Features
 
