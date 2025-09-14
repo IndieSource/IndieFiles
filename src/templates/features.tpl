@@ -30,7 +30,7 @@
 			</div>
 			<div class="col-sm-6">
 				<div class="figure">
-					<img src="images/info/features/docker-mark-blue.svg" />
+					<img height="150px" src="images/info/features/docker-mark-blue.svg" />
 				</div>
 			</div>
 		</div>
@@ -272,22 +272,6 @@
 	<div class="section">
 		<div class="row">
 			<div class="col-sm-6">
-				<a class="unstyled" href="#features/integrated-design">
-					<h2><i class="fa fa-network-wired"></i>Integrated</h2>
-					<p>The integrated design makes it efficient to use because sharing is integrated throughout the system and apps and the apps work seamlessly together. </p>
-				</a>
-			</div>
-			<div class="col-sm-6">
-				<div class="figure">
-					<a href="#features/integrated-design"><img src="images/info/features/integrated-design.png" /></a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="section">
-		<div class="row">
-			<div class="col-sm-6">
 				<h2><i class="fa fa-mobile"></i>Platform Independent</h2>
 				<p><%= application.name %> works across all of your devices and operating systems.  It runs on your laptop, destop, tablet, or phone and works with Windows, MacOS, Linux, iOS, and Android and requires no installation.  This means that your data and applications will always be accessible no matter what device or OS you're using. <p> 
 			</div>
@@ -296,22 +280,6 @@
 					<a href="images/info/mobile/iphone.png" target="_blank" class="lightbox" title="<%= application.name %> Mobile"><img src="images/info/mobile/iphone.png" /></a>
 					<div class="caption"><%= application.name %> Mobile</div>
 				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="section">
-		<div class="row">
-			<div class="col-sm-6">
-				<h2><i class="fa fa-code"></i>Web Postable</h2>
-				<p>You can <a href="#features/web-postable">post and view</a> files that have been uploaded to <%= application.name %> on other websites easily with just a bit of HTML code. </p>
-			</div>
-			<div class="col-sm-6">
-				<a href="#features/web-postable">
-					<div class="code well">
-		&lt;iframe src="YOUR FILE LINK HERE"&gt;&lt;/iframe&gt
-					</div>
-				</a>
 			</div>
 		</div>
 	</div>

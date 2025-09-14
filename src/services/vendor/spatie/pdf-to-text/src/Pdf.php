@@ -33,6 +33,7 @@ class Pdf
             '/opt/homebrew/bin/pdftotext', // Homebrew on macOS (Apple Silicon)
             '/opt/local/bin/pdftotext',    // MacPorts on macOS
             '/usr/local/bin/pdftotext',    // Homebrew on macOS (Intel)
+            'C:\\Program Files\\xpdf-tools-win\\bin64\\pdftotext.exe',    // Xpdf on Windows (x64)
         ];
 
         foreach ($commonPaths as $path) {
@@ -88,7 +89,8 @@ class Pdf
         return array_reduce(array_map($mapper, $options), $reducer, []);
     }
 
-    public function setTimeout($timeout) {
+    public function setTimeout($timeout) 
+    {
         $this->timeout = $timeout;
         return $this;
     }
